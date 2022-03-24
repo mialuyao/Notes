@@ -59,5 +59,13 @@ $P_1$可以在本地计算$c_1+(x-a)*b_1 + (y-b)* a_1+(x-a)*(y-b)$也就是$[x*y
 
 
 
+# Square Pairs
+
+类似于算术上的BT
+
+两个随机秘密份额$(\left \langle a\right \rangle^A,\left \langle c\right \rangle^A)$，满足$c=a^2$
+
+相较于BT，更适合平方操作
+
 
 > 徐秋亮, 蒋瀚, & 赵圣楠. (2021). 安全多方计算关键技术：茫然传输协议. 山东大学学报*(*理学版*)*, *56*(10), 61-71. https://kns.cnki.net/kcms/detail/37.1389.N.20210909.1718.002.html 
