@@ -10,7 +10,7 @@ $p_3:(x_3,a_3)$，其中，$a_3=x_2 \oplus v$；$(y_3,b_3)$，其中，$b_3=y_2 
 
 即：$p_i:(x_i,a_i=x_{i-1} \oplus v)$, $(y_i,b_i=y_{i-1} \oplus v)$
 
-- 对于XOR（addition）运算：$v \oplus u$
+- **对于XOR（addition）运算：$v \oplus u$**
 
   各方在本地计算：
 
@@ -33,3 +33,42 @@ $p_3:(x_3,a_3)$，其中，$a_3=x_2 \oplus v$；$(y_3,b_3)$，其中，$b_3=y_2 
   $c_1 \oplus c_2 \oplus c_3 = z_3 \oplus (v \oplus u) \oplus z_1 \oplus (v \oplus u) \oplus z_2 \oplus (v \oplus u) = (z_3 \oplus z_1 \oplus z_2) \oplus (u \oplus v) = u \oplus v$
 
   上述方案没有实现门限
+  
+  
+  
+- **对于AND（multiplication）运算：$v \wedge u$也可表示为$uv$**
+
+​	选择correlated randness $\alpha, \beta, \gamma$，满足$\alpha \oplus \beta \oplus \gamma =0$
+
+各方计算
+
+$r_1=x_1y_1 \oplus a_1b_1 \oplus \alpha$                 $p_1 \overset{r_1}{\rightarrow} p_2$
+
+$r_2=x_2y_2 \oplus a_2b_2 \oplus \beta$                 $p_2 \overset{r_2}{\rightarrow} p_3$
+
+$r_3 = x_3y_3 \oplus a_3b_3 \oplus \gamma$                 $p_3 \overset{r_3}{\rightarrow} p_1$
+
+此时，$p_1(r_1,r_3)$，$p_2(r_2,r_1)$，$p_3(r_3,r_1)$，完成了对$r_1,r_2,r_3$的分享
+
+$$\begin{align*}
+ r_1 \oplus r_2 \oplus r_3 & =  (x_1y_1 \oplus a_1b_1 \oplus \alpha) \oplus (x_2y_2 \oplus a_2b_2 \oplus \beta) \oplus (x_3y_3 \oplus a_3b_3 \oplus \gamma)\\
+  &= x_1y_1 \oplus x_2y_2 \oplus x_3y_3 \oplus (a_1b_1 \oplus a_2b_2 \oplus a_3b_3) \oplus (\alpha \oplus \beta \oplus \gamma)
+\end{align*}$$
+
+其中：
+
+$a_1b_1 = (x_3 \oplus v) (y_3 \oplus u) = x_3y_3 \oplus x_3u \oplus y_3v \oplus uv$
+
+$a_2b_2 = (x_1 \oplus v) (y_1 \oplus u) = x_1y_1 \oplus x_1u \oplus y_1v \oplus uv$
+
+$a_3b_3 = (x_2 \oplus v) (y_2 \oplus u) = x_2y_2 \oplus x_2u \oplus y_2v \oplus uv$
+
+所以：
+
+$$\begin{align*}
+ r_1 \oplus r_2 \oplus r_3 & = x_1y_1 \oplus x_2y_2 \oplus x_3y_3 \oplus (x_3y_3 \oplus x_3u \oplus y_3v \oplus uv) \oplus (x_1y_1 \oplus x_1u \oplus y_1v \oplus uv) \oplus (x_2y_2 \oplus x_2u \oplus y_2v \oplus uv) \oplus (\alpha \oplus \beta \oplus \gamma)\\
+\end{align*}$$
+
+可通过化得到$r_1 \oplus r_2 \oplus r_3 = uv$
+
+> 用到两条运算律$a \oplus a =0$, $a \oplus 0 = a $
