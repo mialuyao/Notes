@@ -5,7 +5,7 @@
 - addition $g(a,b)=a+b$
 - multiplication $g(a,b)=a*b$
 
-<img src="/Users/wangluyao/Library/Application Support/typora-user-images/image-20220402155231860.png" alt="image-20220402155231860" style="zoom: 33%;" />
+<img src="https://github.com/mialuyao/Notes/blob/main/MPC/circuit.png" alt="image-20220402155231860" style="zoom: 10%;" />
 
 理解为参与者$P_1$的输入为$x$，输出为$y$，中间部分为电路，由各个不同的加法门电路、乘法门电路组成。
 
@@ -124,4 +124,4 @@ BGW协议分为三部分
 
     > 这边理解为相互发送份额
 
-<img src="/Users/wangluyao/Library/Application Support/typora-user-images/image-20220402164410079.png" alt="image-20220402164410079" style="zoom: 33%;" />
+<img src="https://github.com/mialuyao/Notes/blob/main/MPC/secret-sharing.png" alt="image-20220402164410079" style="zoom: 33%;" />
