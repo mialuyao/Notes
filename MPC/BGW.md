@@ -69,19 +69,19 @@ BGW协议分为三部分
         > - 思路
         >
         >   - 首先以矩阵乘法的方式表示出$h$
-        >   $$\begin{pmatrix}
-        >   1 & \alpha_1 & \alpha_1^2 &... & \alpha_1^{2t} \\
-        >   1 & \alpha_2 & \alpha_1^2 &... & \alpha_2^{2t}\\...\\\
-        >   1& \alpha_n & \alpha_n^2 &... & \alpha_n^{2t} \\
-        >   \end{pmatrix}\begin{pmatrix}
-        >   ab\\
-        >   h_1\\...\\\
-        >   h_{2t}\\
-        >   \end{pmatrix}=\begin{pmatrix}
-        >   h(\alpha_1)\\
-        >   h(\alpha_2)\\...\\\
-        >   h(\alpha_n)\\
-        >   \end{pmatrix}$$
+        >   $$\begin{pmatrix*}
+        >   1 & \alpha_1 & \alpha_1^2 & \cdots & \alpha_1^{2t} \\\
+        >   1 & \alpha_2 & \alpha_1^2 & \cdots & \alpha_2^{2t}\\\ \vdots \\\
+        >   1& \alpha_n & \alpha_n^2 & \cdots & \alpha_n^{2t} \\\
+        >   \end{pmatrix*}\begin{pmatrix*}
+        >   ab\\\
+        >   h_1\\\ \cdots \\\
+        >   h_{2t}\\\
+        >   \end{pmatrix*}=\begin{pmatrix*}
+        >   h(\alpha_1)\\\
+        >   h(\alpha_2)\\\ \cdots \\\
+        >   h(\alpha_n)\\\
+        >   \end{pmatrix*}$$
         >
         >   第一个矩阵的行对应每个参与方构造的多项式的系数
         >
@@ -90,19 +90,19 @@ BGW协议分为三部分
         >   第三个矩阵为得到的多项式
         >
         >   对此等式进行变换
-        >   $$\begin{pmatrix}
-        >   ab\\
-        >   h_1\\...\\\
-        >   h_{2t}\\
-        >   \end{pmatrix}=\begin{pmatrix}
-        >   \lambda_1 & ... &\lambda_n\\
-        >   \vdots\\
-        >   ...\\
-        >   \end{pmatrix}\begin{pmatrix}
-        >   h(\alpha_1)\\
-        >   h(\alpha_2)\\ \vdots\\\
-        >   h(\alpha_n)\\
-        >   \end{pmatrix}$$
+        >   $$\begin{pmatrix*}
+        >   ab\\\
+        >   h_1\\\ \cdots \\\
+        >   h_{2t}\\\
+        >   \end{pmatrix*}=\begin{pmatrix*}
+        >   \lambda_1 & \cdots &\lambda_n\\\
+        >   \vdots\\\
+        >   \cdots \\\
+        >   \end{pmatrix*}\begin{pmatrix*}
+        >   h(\alpha_1)\\\
+        >   h(\alpha_2)\\\ \vdots\\\
+        >   h(\alpha_n)\\\
+        >   \end{pmatrix*}$$
         >
         >   即左右乘上多项式系数组成的矩阵的逆
         >
