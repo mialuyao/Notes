@@ -43,7 +43,7 @@ BGW协议分为三部分
 
     - 输入$g_a(x),g_b(x)$；输出$h_{a+b}(x)$
 
-    - 表示为：$f_{mult}((g_a(\alpha_1),g_b(\alpha_1)),...(g_a(\alpha_n),g_b(\alpha_n)))=(h_{a*b}(\alpha_1),...,h_{a*b}(\alpha_n))$
+    - 表示为：$f_{mult}((g_a(\alpha_1),g_b(\alpha_1)),...(g_a(\alpha_n),g_b(\alpha_n)))=(h_{a*b}(\alpha_1),...,h_{a*b}(\alpha_n))$,
       或者可线性表示为 $ab=\lambda_1 h(\alpha_1)+...+\lambda_n h(\alpha_n)$， 
 
     - 计算方式：
@@ -105,7 +105,7 @@ BGW协议分为三部分
         >
         >   即左右乘上多项式系数组成的矩阵的逆
         >
-        >   这里有一个reminder：对于任意多项式$h(x)$，次数$t<n$，存在常数$\lambda1,...\lambda_n$满足$\lambda_1 *h(\alpha_1)+...+\lambda_n*h(\alpha_n) = h(0)=a*b$
+        >   这里有一个reminder：对于任意多项式$h(x)$，次数$t<n$，存在常数$ \lambda1,...\lambda_n$，满足$\lambda_1 *h(\alpha_1)+...+\lambda_n*h(\alpha_n) = h(0)=a*b $
 
     电路的计算是gate-by-gate的
 
