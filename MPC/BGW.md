@@ -71,18 +71,23 @@ BGW协议分为三部分
         >   - 首先以矩阵乘法的方式表示出$h$
         >
         >   $$\begin{pmatrix}
-        >    1 & \alpha_1 & \alpha_1^2 &... & \alpha_1^{2t} \\
-        >    1 & \alpha_2 & \alpha_1^2 &... & \alpha_2^{2t}\\...\\\
-        >    1& \alpha_n & \alpha_n^2 &... & \alpha_n^{2t} \\
-        >   \end{pmatrix}\begin{pmatrix}
-        >    ab\\
-        >   h_1\\...\\\
-        >    h_{2t}\\
-        >   \end{pmatrix}=\begin{pmatrix}
-        >    h(\alpha_1)\\
-        >   h(\alpha_2)\\...\\\
-        >    h(\alpha_n)\\
-        >   \end{pmatrix}$$
+        >    1 & \\ alpha_1 & \\ alpha_1^2 &... & \\ alpha_1^{2t} \\\
+        >    1 & \\ alpha_2 & \\ alpha_1^2 &... & \\ alpha_2^{2t}\\\
+        >    ...\\\
+        >    1& \\ alpha_n & \\ alpha_n^2 &... & \\ alpha_n^{2t} \\\
+        >   \end{pmatrix}
+        >   \begin{pmatrix} 
+        >   ab\\\
+        >   h_1\\\
+        >   ...\\\
+        >   h_{2t}\\\
+        >   \end{pmatrix}=
+        >   \begin{pmatrix}
+        >   h(\alpha_1)\\\
+        >   h(\alpha_2)\\\
+        >   ...\\\
+        >   h(\alpha_n)\\\
+        >   \end{pmatrix} $$
         >
         >   第一个矩阵的行对应每个参与方构造的多项式的系数
         >
