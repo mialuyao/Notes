@@ -11,11 +11,29 @@
 
       以与门为例
 
-      $\begin{matrix} x & y & z \\ 0 & 0 & 0 \\ 0 &1 & 0 \\ 1 & 0 & 0 \\ 1& 1 & 1 \end{matrix} \overset{字符串替换}{\rightarrow} \begin{matrix} x & y & z \\ A_0 & B_0 & E_0 \\A_0 & B_1  & E_0 \\ A_1 & B_0 & E_0 \\ A_1 & B_1 & E_1 \end{matrix}$
+      $\begin{matrix} 
+      x & y & z \\ 
+      0 & 0 & 0 \\ 
+      0 &1 & 0 \\ 
+      1 & 0 & 0 \\ 
+      1& 1 & 1 \end{matrix} 
+      \overset{字符串替换}{\rightarrow} 
+      \begin{matrix} x & y & z \\ 
+      A_0 & B_0 & E_0 \\
+      A_0 & B_1  & E_0 \\ 
+      A_1 & B_0 & E_0 \\ 
+      A_1 & B_1 & E_1 
+      \end{matrix}$
 
    3. ==对称加密==
 
-      用$x,y$对应的值加密$z$，得到$\begin{matrix} x & y & z \\ A_0 & B_0 & En c_{A_0,B_0}(E_0) \\A_0 & B_1  & Enc_{A_0,B_1}(E_1) \\ A_1 & B_0 & Enc_{A_1,B_0}(E_0) \\ A_1 & B_1 & Enc_{A_1,B_1}(E_1) \\ \end{matrix}$
+      用$x,y$对应的值加密$z$，得到
+      $\begin{matrix} x & y & z \\ 
+      A_0 & B_0 & En c_{A_0,B_0}(E_0) \\
+      A_0 & B_1  & Enc_{A_0,B_1}(E_1) \\ 
+      A_1 & B_0 & Enc_{A_1,B_0}(E_0) \\ 
+      A_1 & B_1 & Enc_{A_1,B_1}(E_1) \\ 
+      \end{matrix}$
 
    4. 打乱真值表
 
