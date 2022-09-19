@@ -923,6 +923,64 @@ B的计算复杂度$O(wloglogv)$
 
 
 
+**==方法二：==**
+
+两方环境下，对应集合为$I=\{A,B\}$，使用多项式$\rho^{(I)}$进行加密，并将$E_{pk}(\rho^{(I)})$发送给对方。
+
+收到后，选择一个随机多项式$\gamma^{(I)}$，与之相乘
+
+例如A方计算$E_{pk}(\rho^{(A)} \cdot \gamma^{(B)})$，B方计算$E_{pk}(\rho^{(B)} \cdot \gamma^{(A)})$，再计算同态加
+$$
+E_{pk}(\rho^{(A)} \cdot \gamma^{(B)}+\rho^{(B)} \cdot \gamma^{(A)})
+$$
+解密得到$\delta=\rho^{(A)} \cdot \gamma ^{(B)}+\rho^{(B)} \cdot \gamma ^{(A)}$
+
+若$\delta(s_i^{(I)})=0$，则$s_i^{(I)}$即为交集
+
+
+
+> 使用ZKP将安全性提高到恶意敌手攻击下
+
+
+
+## 使用OPRF去构造PSI
+
+> Two-party protocol between sender $S$ and receiver $R$ for securely computing a pseudorandom  function $f_k()$
+>
+> - ==Functionality: $(k,x) \rightarrow (\perp, f_k(x))$==
+>
+> - key distributed by sender
+> - input $x$ contributed by $R$
+> - $R$ learns $f_k(x)$, $S$ learns nothings
+
+**使用OPRF构造朴素的PSI算法：**
+
+- A构造$n$个不经意伪随机函数的种子$K_i$
+- B为Y中的每一个元素$y$，执行一个对应OPRF，得到集合$H_B=\{F(K_i,y_i)|y_i \in Y\}$
+- A为X中的每一个元素x，执行每一个不经意伪随机函数，得到集合$H_A=\{F(K_i,x)|x \in X\}$
+- $A \overset{KA}{\rightarrow} B $，B求交集$H_A \cap H_B$，在将交集映射回Y，即可得到X与Y的交集。
+
+$\rightarrow $问题：集合$H_A$的大小为$O(n^2)$
+
+$\rightarrow$将集合大小限制在$O(n)$：使用cuckoo hashing
+
+> cuckoo hashing
+>
+> - 对key值hash，生成两个hash key值，hashk1和 hashk2, 如果对应的两个位置上有一个为空，那么直接把key插入即可。
+> - 否则，任选一个位置，把key值插入，把已经在那个位置的key值踢出来。
+> - 被踢出来的key值，需要重新插入，直到没有key被踢出为止。
+>
+> 哈希函数是成对的，分别映射到两个位置，一个是记录的位置的，另一个是备用位置（用来处理碰撞）
+>
+> > https://coolshell.cn/articles/17225.html
+> >
+> > https://lrita.github.io/2020/02/11/cuckoo-hashing-filter/
+
+**使用cuckoo hashing构造PSI**
+
+- A，B双方共同选择三个哈希函数$h_1,h_2,h_3$
+- B将持有的$n$个元素Y，使用cuckoo hashing，
+
 
 
 

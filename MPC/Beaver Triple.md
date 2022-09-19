@@ -20,7 +20,7 @@
 
 这里有一个比较容易理解的方法（数形结合😂）
 
-<img src="/Users/wangluyao/Library/Application Support/typora-user-images/image-20220314120018546.png" alt="image-20220314120018546" style="zoom: 33%;" />
+<img src="IMG/Beaver%20Triple.png" width="80%"/>
 
 根据图形
 
