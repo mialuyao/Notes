@@ -5,7 +5,7 @@
 - addition $g(a,b)=a+b$
 - multiplication $g(a,b)=a*b$
 
-<img src="https://github.com/mialuyao/Notes/blob/main/MPC/circuit.png" alt="image-20220402155231860" style="zoom: 10%;" />
+<img src="IMG/circuit.png"  width="80%;" />
 
 理解为参与者$P_1$的输入为$x$，输出为$y$，中间部分为电路，由各个不同的加法门电路、乘法门电路组成。
 
